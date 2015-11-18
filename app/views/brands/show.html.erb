@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
+<br>
+<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  <div class="well">
+    <h3 class="text-center"><%= @brand.name %></h3>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @brand.name %>
-</p>
-
-<%= link_to 'Edit', edit_brand_path(@brand) %> |
-<%= link_to 'Back', brands_path %>
+  <div class="text-center">
+    <button class="btn btn-xs btn-default">
+      <%= link_to 'Edit', edit_brand_path(@brand) %>
+    </button>
+    <button class="btn btn-xs btn-default">
+      <%= link_to 'Back', brands_path %>
+    </button>
+  </div>
+</div>

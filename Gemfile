@@ -7,6 +7,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
+gem 'paperclip', '~> 4.3'
+gem 'font-awesome-rails'
+gem 'annotate'
+gem 'awesome_print'
 group :development, :test do
   gem 'byebug'
 end

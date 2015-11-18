@@ -1,6 +1,18 @@
-<h1>Editing Brand</h1>
+<br>
+<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  <div class="well">
+    <h1 class="text-center">Editing Brand</h1>
 
-<%= render 'form' %>
+    <%= render 'form' %>
+  </div>
 
-<%= link_to 'Show', @brand %> |
-<%= link_to 'Back', brands_path %>
+  <div class="text-center">
+    <br>
+    <button class="btn btn-xs btn-default">
+      <%= link_to 'Show', @brand %>
+    </button>
+    <button class="btn btn-xs btn-default">
+      <%= link_to 'Back', brands_path %>
+    </button>
+  </div>
+</div>
