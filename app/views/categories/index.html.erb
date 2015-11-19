@@ -20,7 +20,6 @@
         <td><%= category.name %></td>
         <td><%= link_to fa_icon('eye', text: 'Show'), category %></td>
         <td><%= link_to fa_icon('pencil', text: 'Edit'), edit_category_path(category) %></td>
-        <td><%= link_to fa_icon('trash-o', text: 'Delete'), category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -19,7 +19,6 @@
         <td><%= brand.name %></td>
         <td><%= link_to fa_icon('eye', text:'Show'), brand %></td>
         <td><%= link_to fa_icon('pencil', text: 'Edit'), edit_brand_path(brand) %></td>
-        <td><%= link_to fa_icon('trash-o', text: 'Delete'), brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

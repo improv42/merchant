@@ -11,5 +11,8 @@
     <button class="btn btn-xs btn-default">
       <%= link_to 'Back', categories_path %>
     </button>
+    <button class="btn btn-xs btn-default">
+      <%= link_to fa_icon('trash-o', text: 'Delete'), @category, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </button>
   </div>
 </div>
