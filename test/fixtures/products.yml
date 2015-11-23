@@ -1,17 +1,41 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Product 1
   current_price: 9.99
   quantity: 1
-  description: MyText
-  category_id: 
-  brand_id: 
+  description: A delicious product for your life
+  category_id:
+  brand_id:
 
 two:
-  name: MyString
+  name: Product2
   current_price: 9.99
   quantity: 1
-  description: MyText
-  category_id: 
-  brand_id: 
+  description: A fantastic product for your day
+  category_id:
+  brand_id:
+
+# == Schema Information
+#
+# Table name: products
+#
+#  id                  :integer          not null, primary key
+#  name                :string
+#  current_price       :decimal(, )
+#  quantity            :integer
+#  description         :text
+#  category_id         :integer
+#  brand_id            :integer
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  avatar_file_name    :string
+#  avatar_content_type :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#
+# Indexes
+#
+#  index_products_on_brand_id     (brand_id)
+#  index_products_on_category_id  (category_id)
+#

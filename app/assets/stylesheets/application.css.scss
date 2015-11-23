@@ -16,6 +16,14 @@
 
  @import "font-awesome";
 
+ a:hover {
+  text-decoration: none;
+ }
+
  .panel {
+  height: 370px;
+ }
+
+ #product_index_panel {
   height: 500px;
  }

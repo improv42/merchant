@@ -24,12 +24,12 @@
 
     <p>
       <strong>Category:</strong>
-      <%= @product.category.name %>
+      <%= @product.category.try(:name) %>
     </p>
 
     <p>
       <strong>Brand:</strong>
-      <%= @product.brand.name %>
+      <%= @product.brand.try(:name) %>
     </p>
   </div>
 

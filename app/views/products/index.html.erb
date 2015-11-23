@@ -9,9 +9,9 @@
 <br>
 
 <div class="row">
-  <% @products.each do |product| %>
+  <% @products.order('name').each do |product| %>
     <div class="col-xs-2 col-md-3">
-      <div class="panel">
+      <div class="panel" id="product_index_panel">
         <div class="panel-heading">
           <h3 class="text-center"><%= product.name %></h3>
         </div>
