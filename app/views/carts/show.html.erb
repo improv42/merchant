@@ -1,4 +1,29 @@
-<p id="notice"><%= notice %></p>
+<h1>Your Shopping Cart</h1>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Unit Price</th>
+      <th>Total Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart.line_items.each do |item| %>
+    <tr>
+      <td><%= item.product.name %></td>
+      <td><%= item.quantity %> &times;</td>
+      <td><%= number_to_currency(item.price) %></td>
+      <td><%= number_to_currency(item.total_price) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h3>Order Subtotal: <%= number_to_currency(@cart.subtotal) %></h3>
+
+<ul class="list-inline">
+  <li><%= link_to 'Continue Shopping', storefront_index_path, class: 'btn btn-success btn-md' %></li>
+  <li><%= button_to 'Empty cart', @cart, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-md btn-danger' %></li>
+</ul>
