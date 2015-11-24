@@ -1,5 +1,6 @@
 # Defines the User class
 class User < ActiveRecord::Base
+  has_many :orders
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
