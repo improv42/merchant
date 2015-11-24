@@ -1,12 +1,10 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Ship name:</strong>
+  <strong>Ship to:</strong>
   <%= @order.ship_name %>
 </p>
 
 <p>
-  <strong>Ship address:</strong>
+  <strong>Shipping address:</strong>
   <%= @order.ship_address %>
 </p>
 
@@ -15,10 +13,34 @@
   <%= @order.payment_type %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @order.user %>
-</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Unit Price</th>
+      <th>Total Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.line_items.each do |item| %>
+      <tr>
+      <td><%= image_tag item.product.avatar.url(:thumb), class: 'img-responsive' %></td>
+      <td><%= item.product.name %></td>
+      <td><%= item.quantity %> &times;</td>
+      <td><%= number_to_currency(item.price) %></td>
+      <td><%= number_to_currency(item.total_price) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<h3>Order Subtotal: <%= number_to_currency(@order.subtotal) %></h3>
+
+<button class="btn btn-md btn-info">
+  <%= link_to 'Edit', edit_order_path(@order) %>
+</button>
+<button class="btn btn-md btn-info">
+  <%= link_to 'Back', orders_path %>
+</button>

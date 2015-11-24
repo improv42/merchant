@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
+  include CurrentCart
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :set_cart, only: [:new, :create]
 
   # GET /orders
   # GET /orders.json
@@ -15,7 +17,12 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = Order.new
+    if @cart.line_items.empty?
+      redirect_to storefront_index_url, notice: "Your cart is empty"
+    else
+      @order = Order.new
+      @order.user_id = current_user.id
+    end
   end
 
   # GET /orders/1/edit
@@ -26,9 +33,14 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @order.user_id = current_user.id
+    @order.add_line_items_from_cart(@cart)
 
     respond_to do |format|
       if @order.save
+        Cart.destroy(session[:cart_id])
+        session[:cart_id] = nil
+
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
@@ -64,12 +76,12 @@ class OrdersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_order
+     def set_order
       @order = Order.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:ship_name, :ship_address, :payment_type, :user_id)
+      params.require(:order).permit(:ship_name, :ship_address, :payment_type)
     end
 end

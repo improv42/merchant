@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :products
   resources :brands
   resources :categories
-  root to: 'visitors#index'
+  root to: 'storefront#index'
   devise_for :users
   resources :users
 end
