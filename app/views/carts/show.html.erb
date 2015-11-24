@@ -27,6 +27,7 @@
 <h3>Order Subtotal: <%= number_to_currency(@cart.subtotal) %></h3>
 
 <ul class="list-inline">
+  <li><%= link_to 'Checkout', new_order_path, class: 'btn btn-md btn-info' %></li>
   <li><%= link_to 'Continue Shopping', storefront_index_path, class: 'btn btn-success btn-md' %></li>
   <li><%= button_to 'Empty cart', @cart, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-md btn-danger' %></li>
 </ul>
