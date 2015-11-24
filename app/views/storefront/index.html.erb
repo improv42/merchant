@@ -11,7 +11,7 @@
         <div class="panel-body">
 
           <a href="#" data-toggle="modal" data-target="#product-<%= product.id %>-modal" >
-          <%= image_tag product.avatar.url(:medium), class: 'img-responsive img-circle center-block' %>
+          <%= image_tag product.avatar.url(:medium), class: 'img-responsive center-block' %>
           <p>
             <h5 class="text-center"><%= product.name %></h5>
             <strong>Price: </strong><%= number_to_currency product.current_price %>
@@ -34,7 +34,7 @@
           <h3 class="text-center"><%= product.name %></h3>
         </div>
         <div class="modal-body">
-          <%= image_tag product.avatar.url(:medium), class: 'img-responsive img-circle center-block' %>
+          <%= image_tag product.avatar.url(:medium), class: 'img-responsive center-block' %>
           <p>
             <br>
             <%= product.description %>
