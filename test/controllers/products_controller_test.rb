@@ -2,6 +2,8 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
+    @cart = carts(:one)
+    @line_item = line_items(:one)
     @product = products(:one)
     @product_new = {
       name: 'unique_name',

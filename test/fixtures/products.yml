@@ -7,6 +7,11 @@ one:
   description: A delicious product for your life
   category_id:
   brand_id:
+  avatar_file_name:
+  avatar_content_type:
+  avatar_file_size:
+  avatar_updated_at:
+  id: 1
 
 two:
   name: Product2
@@ -15,6 +20,11 @@ two:
   description: A fantastic product for your day
   category_id:
   brand_id:
+  avatar_file_name:
+  avatar_content_type:
+  avatar_file_size:
+  avatar_updated_at:
+  id: 2
 
 # == Schema Information
 #

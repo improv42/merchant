@@ -67,12 +67,18 @@ class CartsController < ApplicationController
   private
     def invalid_cart
       logger.error "Attemt to access invalid cart #{params[:id]}"
+      @cart = Cart.create if @cart.nil?
+      session[:cart_id] = @cart.id
       redirect_to storefront_index_url, notice: 'Invalid cart'
+      @cart
     end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
       @cart = Cart.find(params[:id])
+      @cart = Cart.create if @cart.nil?
+      session[:cart_id] = @cart.id
+      @cart
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

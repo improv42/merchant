@@ -7,13 +7,13 @@ class OrdersControllerTest < ActionController::TestCase
 
   test "should get index" do
     get :index
-    assert_response :success
+    assert_redirected_to orders_path(assigns(:order))
     assert_not_nil assigns(:orders)
   end
 
   test "should get new" do
     get :new
-    assert_response :success
+    assert_redirected_to storefront_index_url
   end
 
   test "should create order" do
@@ -26,12 +26,12 @@ class OrdersControllerTest < ActionController::TestCase
 
   test "should show order" do
     get :show, id: @order
-    assert_response :success
+    assert_redirected_to order_path(assigns(:order))
   end
 
   test "should get edit" do
     get :edit, id: @order
-    assert_response :success
+    assert_redirected_to edit_order_path(assigns(:order))
   end
 
   test "should update order" do
