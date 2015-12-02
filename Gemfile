@@ -10,6 +10,12 @@ gem 'paperclip', '~> 4.3'
 gem 'font-awesome-rails'
 gem 'annotate'
 gem 'awesome_print'
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'figaro'
+gem 'high_voltage'
+gem 'puma'
+gem 'simple_form'
 
 group :production do
   gem 'pg'
@@ -25,12 +31,6 @@ group :development do
   gem 'populator'
   gem 'faker'
 end
-gem 'bootstrap-sass'
-gem 'devise'
-gem 'figaro'
-gem 'high_voltage'
-gem 'puma'
-gem 'simple_form'
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
