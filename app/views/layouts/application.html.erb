@@ -2,21 +2,27 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Uncle Fun" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Fun-Tastic" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "The place for fun!" %>">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body class="container-fluid">
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
-     <%= render 'layouts/messages' %>
-     <h1 class="text-center">Welcome to Uncle Fun</h1>
-     <br>
-     <%= yield %>
-    </main>
+    <div class="row">
+      <div class="col-xs-12">
+        <main role="main">
+         <%= render 'layouts/messages' %>
+          <div class="jumbotron">
+            <img src="<%= image_path 'funtastic_logo.png' %>" alt="Fun-Tastic Logo" class="img-responsive center-block" id="logo">
+          </div>
+         <br>
+         <%= yield %>
+        </main>
+      </div>
+    </div>
   </body>
 </html>

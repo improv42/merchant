@@ -16,12 +16,36 @@
 
  @import "font-awesome";
 
+ .navbar {
+  background-color: rgba(238, 238, 238, 0.8);
+  border-style: none;
+ }
+
+ #home-logo {
+  width: 15%;
+ }
+
+ #logo {
+  width: 50%;
+  // margin-top: 10px;
+ }
+
+ .jumbotron {
+  background-image: image-url('fog_city.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  padding: 05%;
+  margin-bottom: 0;
+}
+
  a:hover {
   text-decoration: none;
  }
 
  .panel {
   height: 400px;
+  border-radius: 20px;
  }
 
  #product_index_panel {
