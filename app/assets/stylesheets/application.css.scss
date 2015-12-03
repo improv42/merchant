@@ -39,6 +39,16 @@
   margin-bottom: 0;
 }
 
+ .jumbotron-about {
+  background-image: image-url('about_new_orleans.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  padding: 10%;
+  margin-bottom: 0;
+  color: #F1F1F1;
+}
+
  a:hover {
   text-decoration: none;
  }

@@ -1,6 +1,9 @@
 <% if params[:cat_id] %>
   <h1>All <%= @category.name.capitalize %></h1>
 <% else %>
+  <div class="jumbotron">
+    <img src="<%= image_path 'funtastic_logo.png' %>" alt="Fun-Tastic Logo" class="img-responsive center-block" id="logo">
+  </div>
   <h1>Everything Funtastic!</h1>
 <% end %>
 
