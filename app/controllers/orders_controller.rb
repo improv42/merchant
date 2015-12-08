@@ -38,6 +38,8 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
+        # Deliver order confirmation e-mail
+        OrderConfirmation.send_order_confirmation(current_user, @order).deliver_now
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
 
