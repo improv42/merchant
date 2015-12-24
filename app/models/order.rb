@@ -2,7 +2,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_many :line_items, dependent: :destroy
 
-  PAYMENT_TYPES = ['Credit Card', 'Paypal', 'Check', 'Cash']
+  PAYMENT_TYPES = ['Gift Card', 'Monopoly Money', 'Wampum', 'Hugs']
 
   validates :ship_name, :ship_address, :payment_type, presence: true
   validates :payment_type, inclusion: PAYMENT_TYPES
@@ -15,9 +15,8 @@ class Order < ActiveRecord::Base
   end
 
   def subtotal
-    line_items.to_a.sum{|item| item.total_price}
+    line_items.to_a.sum{ |item| item.total_price }
   end
-
 end
 
 # == Schema Information
