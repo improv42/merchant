@@ -1,3 +1,11 @@
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <button type="button" class="btn btn-info btn-lg modal-info-button" data-toggle="modal" data-target="#modal-intro" class="text-center">
+      How Do I Check Out This App?
+    </button>
+  </div>
+</div>
+<br>
 <% if params[:cat_id] %>
   <h1>All <%= @category.name.capitalize %></h1>
 <% else %>
@@ -52,3 +60,42 @@
     </div>
   <% end %>
 </div>
+
+<div class="modal fade" id="modal-intro" tabindex="-1" role="dialog" aria-labelledby="modal-1-1-label">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="text-center">Welcome to Sweater-Tastic!</h2>
+      </div>
+      <div class="modal-body">
+
+        <p>
+          This app has several parts. To nose around and see some of its features you can log into our demo account with the credentials:
+        </p>
+        <p class="text-center">
+          <strong>
+            email: demo@email.com
+            <br>
+            password: password1234
+          </strong>
+        </p>
+        <p>
+          This is a full featured e-commerce platform complete with backroom product management and a shopping cart for check out.
+        </p>
+        <p>
+          If you sign in to the demo account you'll have access to all parts of the app, with the limitation of altering the data. You can get into the forms to create, update, and delete items, but won't be able to actually change things.
+        </p>
+        <p>
+          User accounts let you define different levels of access, From customer accounts, to managers, to administrators, there are custom limitations for each role.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(window).load(function(){
+    $('#modal-intro').modal('show');
+  });
+</script>
