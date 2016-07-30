@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from SecurityError do
-    redirect_to root_url, alert: 'You do not have access to that feature'
+    redirect_to :back, alert: 'You don\'t have access to that feature'
   end
 
 end
