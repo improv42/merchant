@@ -1,9 +1,43 @@
 <br>
-<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-  <div class="well">
-    <h3 class="text-center"><%= @category.name %></h3>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+    <div class="well">
+      <h3 class="text-center"><%= @category.name %></h3>
+    </div>
   </div>
+</div>
 
+<div class="row">
+  <% @products.order('name').each do |product| %>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="panel" id="product_index_panel">
+        <div class="panel-heading">
+          <h3 class="text-center"><%= product.name %></h3>
+        </div>
+        <div class="panel-body">
+          <%= image_tag product.avatar.url(:medium), class: 'img-responsive center-block' %>
+          <p class="text-center">
+            <strong>Price: </strong><%= number_to_currency product.current_price %>
+          </p>
+          <p class="text-center">
+            <strong>Quantity: </strong><%= product.quantity %>
+          </p>
+          <br>
+          <div class="text-center">
+            <button class="btn btn-xs btn-info">
+                <%= link_to fa_icon('eye', text: 'Show'), product %>
+            </button>
+            <button class="btn btn-xs btn-info">
+              <%= link_to fa_icon('pencil', text: 'Edit'), edit_product_path(product) %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
   <div class="text-center">
     <button class="btn btn-xs btn-default">
       <%= link_to 'Edit', edit_category_path(@category) %>

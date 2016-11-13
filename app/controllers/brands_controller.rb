@@ -11,6 +11,7 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.json
   def show
+    @products = Product.where(brand_id: @brand.id)
   end
 
   # GET /brands/new
