@@ -1,5 +1,7 @@
 # E-Commerce Application
 
+Check Out the [Demo Site](https://fun-tastic.herokuapp.com/)
+
 This is a basic e-commerce site which includes:
 
 ## A Storefront
